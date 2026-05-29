@@ -27,6 +27,9 @@ attr_reader :numero, :titular, :saldo
   end
 
 
+  def exibir_saldo
+    p "Saldo: R$#{@saldo}"
+  end
 end
 
 
