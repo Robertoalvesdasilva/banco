@@ -1,28 +1,30 @@
-require_relative "lib/conta"
-require_relative "lib/conta_corrente"
-require_relative "lib/conta_poupanca"
-maria = ContaCorrente.new(2, "Maria Clara")
-joao = ContaPoupanca.new(1, "João Barbosa")
+require_relative "lib/util.rb"
+require_relative "view/pessoa_view"
+require_relative "data/pessoa_data"
 
+tela = Util.new
+pessoa_data = PessoaData.new
+pessoa_view = PessoaView.new(pessoa_data)
+loop = true
 
- joao.depositar 1050
- maria.depositar 1000
- maria.sacar 50
- joao.sacar 10 
- maria.sacar 1100
- joao.receber
-#joao.transferir(maria, 100)
-#puts "#{joao.titular} - Saldo R$ #{'%.2f' % joao.saldo}"
-#puts "#{maria.titular} - Saldo R$ #{'%.2f' % maria.saldo}"
-#maria.exibir_saldo
-puts "\n=== João ==="
-puts "Saldo R$ #{'%.2f' % joao.saldo}"
+while loop
+  
+  tela.gerar_titulo "Sistema Bancario" 
+  print "Escolha: 1 - Pessoa | 2 - Conta "
+  escolha = gets.chomp.to_i
 
-puts "\n=== Maria ==="
-maria.exibir_saldo
+  case escolha
+    when 1
+      tela.gerar_titulo "SB - Pessoa"
+      pessoa_view.menu_pessoa
+    when 2
+      tela.gerar_titulo "SB - Conta"
+      p "Tela de contas"
+    else 
+      p "Opção inválida"
+    end 
 
-
-
-
-
-
+  print "Deseja continuar? S - sim | N - Não"  
+  continuar = gets.chomp
+  loop = false if continuar.upcase == "N"
+end

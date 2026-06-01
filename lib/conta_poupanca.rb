@@ -6,7 +6,7 @@ class ContaPoupanca < Conta
   end
 
   def receber
-    @saldo + @saldo * 0.08
-  end
-
+    @saldo + @saldo * 0.5
+  end 
+   
 end
