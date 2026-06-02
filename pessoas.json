@@ -1,0 +1,14 @@
+[
+  {
+    "cpf_cnpj": "09966655526",
+    "nome": "Roberto",
+    "tipo": "PF",
+    "endereco": {
+      "cep": "64036800",
+      "logradouro": "Eduardo Costa",
+      "bairro": "parque sul",
+      "cidade": "Teresina",
+      "uf": "pi"
+    }
+  }
+]

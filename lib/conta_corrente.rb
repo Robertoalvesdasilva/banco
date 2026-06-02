@@ -6,21 +6,22 @@ class ContaCorrente < Conta
 
   def initialize(numero, titular)
     super(numero, titular)
-    @limite = 200
+    @limite = 150
   end
 
-   def exibir_saldo
-    puts "Saldo: R$ #{@saldo}"
-    puts "Limite: R$ #{@limite}"
-    puts "Total: R$ #{@saldo + @limite}"
-   end
+  def exibir_saldo
+    p "Saldo R$ #{@saldo}"
+    p "Limite R$ #{@limite}"
+    p "Total: R$ #{@saldo + @limite}"
+  end
 
   def sacar valor
     return @saldo -= valor if valor <= saldo_disponivel
-    puts "Saldo insulficiente"
+    p "Saldo insuficiente"
   end
 
   def saldo_disponivel
-     @saldo + @limite
+    @saldo + @limite
   end
+  
 end

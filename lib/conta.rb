@@ -1,24 +1,20 @@
 class Conta
 
-attr_writer :saldo 
-attr_reader :numero, :titular, :saldo
-
-
-
+  attr_reader :numero, :titular, :saldo
+  
   def initialize(numero, titular)
     @numero = numero
     @titular = titular
-    @saldo = 0 
+    @saldo = 0
   end
 
-
   def depositar valor
-   @saldo += valor
+    @saldo += valor
   end
 
   def sacar valor
-    return @saldo -= valor if valor <= @saldo
-    p "Saldo insuficiente"
+    return @saldo -= valor if valor <= @saldo 
+    p "saldo insuficiente" 
   end
 
   def transferir destino, valor
@@ -26,10 +22,7 @@ attr_reader :numero, :titular, :saldo
     destino.depositar valor
   end
 
-
   def exibir_saldo
-    p "Saldo: R$#{@saldo}"
+    p "Saldo: R$ #{@saldo}"
   end
 end
-
-
